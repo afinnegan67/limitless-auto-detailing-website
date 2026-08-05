@@ -102,7 +102,7 @@ export default function SeattleCeramicCoatingSpecialPage() {
         </div>
       </section>
 
-      <footer className="border-t border-white/10 bg-[#0c0c0e] py-7 text-center text-xs text-white/35">© 2026 Limitless Auto Detailing · Mobile detailing in the Seattle area</footer>
+      <footer className="border-t border-white/10 bg-[#0c0c0e] px-5 py-7 text-center text-xs leading-relaxed text-white/35">© 2026 Limitless Auto Detailing · Mobile detailing in the Seattle area</footer>
       <a href={CERAMIC_BOOKING_URL} className="fixed inset-x-4 bottom-4 z-40 flex items-center justify-between rounded-full border border-[#a7dc72]/45 bg-[#168a42] px-5 py-3.5 font-black uppercase text-white shadow-2xl shadow-black/60 sm:hidden"><span>See package options</span><span>$649</span></a>
     </main>
   )
