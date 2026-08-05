@@ -47,7 +47,7 @@ export default function FamilyInteriorResetPage() {
               <a href="#book" className="flex items-center justify-center gap-2 rounded-full bg-[#168a42] px-7 py-4 font-black uppercase text-white shadow-[0_16px_45px_rgba(22,138,66,.28)]">See weekend appointments <ArrowUpRight className="size-5" /></a>
               <div className="flex items-baseline justify-center gap-2 sm:justify-start"><span className="text-sm font-bold uppercase text-white/45">From</span><span className="text-4xl font-black text-[#a7dc72]">$225</span></div>
             </div>
-            <p className="mt-4 text-xs text-white/45">Car $225 · Midsize SUV $250 · Three-row $275</p>
+            <p className="mt-4 text-xs text-white/45">Sedan / coupe $225 · Hatchback, 2-row SUV, or truck $250 · 3-row vehicle $275</p>
           </div>
         </div>
       </section>
@@ -89,15 +89,15 @@ export default function FamilyInteriorResetPage() {
           <div>
             <p className="font-mono text-xs font-bold uppercase tracking-[0.2em] text-[#78b936]">Saturday + Sunday · 8 AM–6 PM</p>
             <h2 className="mt-4 text-4xl font-black uppercase leading-[0.92] tracking-tight sm:text-6xl">Pick your vehicle. Pick your weekend.</h2>
-            <p className="mt-5 max-w-xl leading-relaxed text-white/60">Choose Small Car, Medium Vehicle, or Large / 3-Row SUV to see the exact package price. Live appointment selection will appear once the Limitless calendar is connected.</p>
+            <p className="mt-5 max-w-xl leading-relaxed text-white/60">Choose your vehicle type to see the exact Family Interior Reset price. The booking calendar will sit here once its public embed URL is connected.</p>
           </div>
           <div className="rounded-2xl border border-[#78b936]/35 bg-[#19191b] p-6 shadow-2xl shadow-black/30 sm:p-10">
             <p className="font-mono text-[10px] font-bold uppercase tracking-[0.2em] text-[#78b936]">Vehicle-specific package pricing</p>
             <h3 className="mt-3 text-3xl font-black uppercase sm:text-5xl">Choose your vehicle size.</h3>
             <div className="mt-6 grid gap-3 text-sm text-white/65 sm:grid-cols-3">
-              <p className="rounded-xl border border-white/10 p-4"><strong className="block text-lg text-white">Small Car</strong>$225 · 4 hours</p>
-              <p className="rounded-xl border border-white/10 p-4"><strong className="block text-lg text-white">Medium Vehicle</strong>$250 · 4 hours</p>
-              <p className="rounded-xl border border-white/10 p-4"><strong className="block text-lg text-white">Large / 3-Row SUV</strong>$275 · 4 hours</p>
+              <p className="rounded-xl border border-white/10 p-4"><strong className="block text-lg text-white">Sedan / Coupe</strong>$225 · 4 hours</p>
+              <p className="rounded-xl border border-white/10 p-4"><strong className="block text-lg text-white">Hatchback / 2-Row SUV / Truck</strong>$250 · 4 hours</p>
+              <p className="rounded-xl border border-white/10 p-4"><strong className="block text-lg text-white">3-Row Vehicle</strong>$275 · 4 hours</p>
             </div>
             <a href={FAMILY_INTERIOR_BOOKING_URL} className="mt-6 flex w-full items-center justify-center gap-2 rounded-full bg-[#168a42] px-7 py-4 font-black uppercase text-white shadow-[0_16px_45px_rgba(22,138,66,.28)]">Continue to package finder <ArrowUpRight className="size-5" /></a>
           </div>

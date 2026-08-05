@@ -18,9 +18,9 @@ type AvailabilityResponse = { message?: string; configured?: boolean; slots?: Sl
 type BookingResponse = { message?: string; bookingId?: string; startAt?: string }
 
 const vehicleTiers: Array<{ key: VehicleTier; label: string; description: string; price: number }> = [
-  { key: 'car', label: 'Car', description: 'Sedan, coupe, hatchback, or compact', price: 225 },
-  { key: 'midsize-suv', label: 'Midsize SUV', description: 'Two-row SUV or crossover', price: 250 },
-  { key: 'three-row', label: 'Three-row vehicle', description: 'Three-row SUV, minivan, or oversized vehicle', price: 275 },
+  { key: 'car', label: 'Sedan / Coupe', description: 'Sedan or two-door coupe', price: 225 },
+  { key: 'midsize-suv', label: 'Hatchback / 2-Row SUV / Truck', description: 'Hatchback, crossover, two-row SUV, or pickup truck', price: 250 },
+  { key: 'three-row', label: '3-Row Vehicle', description: 'Three-row SUV, minivan, or other three-row vehicle', price: 275 },
 ]
 
 function formatSlot(iso: string) {

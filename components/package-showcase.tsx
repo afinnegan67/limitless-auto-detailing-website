@@ -40,7 +40,7 @@ const packages: Package[] = [
     ],
     totalValue: '$671',
     specialPrice: '$225',
-    priceNote: '2-row SUV/truck $250 · 3-row/oversized $275',
+    priceNote: 'Sedan/coupe $225 · hatchback/2-row SUV/truck $250 · 3-row $275',
     bookingUrl: FAMILY_INTERIOR_LANDING_URL,
   },
   {

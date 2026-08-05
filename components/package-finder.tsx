@@ -39,9 +39,9 @@ const scopeOptions: Array<{ value: Scope; label: string; description: string }> 
 ]
 
 const sizeOptions: Array<{ value: VehicleSize; label: string; description: string }> = [
-  { value: 'car', label: 'Car or small vehicle', description: 'Sedan, coupe, hatchback, or compact.' },
-  { value: 'suv', label: 'SUV or truck', description: 'Two-row SUV, crossover, or pickup.' },
-  { value: 'oversized', label: 'Three-row or oversized', description: 'Large SUV, van, or oversized truck.' },
+  { value: 'car', label: 'Sedan or coupe', description: 'Sedan or two-door coupe.' },
+  { value: 'suv', label: 'Hatchback, 2-row SUV, or truck', description: 'Hatchback, crossover, two-row SUV, or pickup.' },
+  { value: 'oversized', label: 'Three-row vehicle', description: 'Three-row SUV, minivan, or other three-row vehicle.' },
 ]
 
 const interiorIssues = [
