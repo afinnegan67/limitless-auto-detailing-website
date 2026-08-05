@@ -1,7 +1,6 @@
 import Image from 'next/image'
 import { ArrowUpRight, CalendarDays, Check, MapPin, ShieldCheck } from 'lucide-react'
-
-const FAMILY_INTERIOR_BOOKING_URL = '/find-your-package'
+import { CalBookingEmbed } from '@/components/cal-booking-embed'
 
 export const metadata = {
   title: 'Family Interior Reset | Limitless Auto Detailing Seattle',
@@ -89,7 +88,7 @@ export default function FamilyInteriorResetPage() {
           <div>
             <p className="font-mono text-xs font-bold uppercase tracking-[0.2em] text-[#78b936]">Saturday + Sunday · 8 AM–6 PM</p>
             <h2 className="mt-4 text-4xl font-black uppercase leading-[0.92] tracking-tight sm:text-6xl">Pick your vehicle. Pick your weekend.</h2>
-            <p className="mt-5 max-w-xl leading-relaxed text-white/60">Choose your vehicle type to see the exact Family Interior Reset price. The booking calendar will sit here once its public embed URL is connected.</p>
+            <p className="mt-5 max-w-xl leading-relaxed text-white/60">Choose the price that matches your vehicle, then select an available appointment directly on the calendar.</p>
           </div>
           <div className="rounded-2xl border border-[#78b936]/35 bg-[#19191b] p-6 shadow-2xl shadow-black/30 sm:p-10">
             <p className="font-mono text-[10px] font-bold uppercase tracking-[0.2em] text-[#78b936]">Vehicle-specific package pricing</p>
@@ -99,7 +98,7 @@ export default function FamilyInteriorResetPage() {
               <p className="rounded-xl border border-white/10 p-4"><strong className="block text-lg text-white">Hatchback / 2-Row SUV / Truck</strong>$250 · 4 hours</p>
               <p className="rounded-xl border border-white/10 p-4"><strong className="block text-lg text-white">3-Row Vehicle</strong>$275 · 4 hours</p>
             </div>
-            <a href={FAMILY_INTERIOR_BOOKING_URL} className="mt-6 flex w-full items-center justify-center gap-2 rounded-full bg-[#168a42] px-7 py-4 font-black uppercase text-white shadow-[0_16px_45px_rgba(22,138,66,.28)]">Continue to package finder <ArrowUpRight className="size-5" /></a>
+            <CalBookingEmbed className="mt-6" />
           </div>
         </div>
       </section>

@@ -2,6 +2,7 @@
 
 import { useMemo, useState } from 'react'
 import { ArrowLeft, ArrowRight, CalendarDays, Check, Loader2, Sparkles } from 'lucide-react'
+import { CalBookingEmbed } from '@/components/cal-booking-embed'
 
 
 type Scope = 'interior' | 'exterior' | 'both' | 'maintenance'
@@ -201,6 +202,12 @@ export function PackageFinder() {
 
   async function loadAvailability() {
     if (!recommendation?.bookable) return
+    if (recommendation.key === 'family-interior') {
+      setError('')
+      setSlots([])
+      setScreen('availability')
+      return
+    }
     setLoading(true)
     setError('')
     try {
@@ -307,7 +314,13 @@ export function PackageFinder() {
                 <div>
                   <p className="text-xs font-bold uppercase tracking-[0.2em] text-accent-foreground">{recommendation.name}</p>
                   <h3 className="mt-2 text-3xl font-black uppercase">Choose a time</h3>
-                  {slots.length > 0 ? (
+                  {recommendation.key === 'family-interior' ? (
+                    <CalBookingEmbed
+                      className="mt-6"
+                      selectedVehicle={sizeOptions.find((option) => option.value === size)?.label}
+                      price={recommendation.price}
+                    />
+                  ) : slots.length > 0 ? (
                     <div className="mt-6 grid grid-cols-2 gap-2 sm:grid-cols-3">{slots.slice(0, 24).map((slot) => { const formatted = formatSlot(slot.startAt); return <button key={`${slot.startAt}-${slot.teamMemberId}`} type="button" onClick={() => { setSelectedSlot(slot); setScreen('details') }} className="rounded-xl border border-border bg-card p-3 text-left transition-colors hover:border-accent"><span className="block text-xs text-muted-foreground">{formatted.day}</span><span className="mt-1 block font-bold">{formatted.time}</span></button> })}</div>
                   ) : (
                     <div className="mt-6 rounded-2xl border border-border bg-card p-5"><p className="font-bold">Live calendar connection is coming online.</p><p className="mt-2 text-sm leading-relaxed text-muted-foreground">Your package recommendation is ready. Limitless Auto&apos;s booking calendar still needs to be connected before appointments can be reserved here.</p></div>
