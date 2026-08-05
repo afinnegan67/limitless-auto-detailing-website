@@ -1,0 +1,2 @@
+# Wrangler-generated runtime types preserve upstream formatting.
+cloudflare-env.d.ts -whitespace

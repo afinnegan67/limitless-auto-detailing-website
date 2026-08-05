@@ -1,0 +1,50 @@
+@import 'tailwindcss';
+@import 'tw-animate-css';
+@import 'shadcn/tailwind.css';
+
+@theme inline {
+  --font-sans: var(--font-geist);
+  --font-mono: var(--font-geist-mono);
+  --color-background: var(--background); --color-foreground: var(--foreground);
+  --color-card: var(--card); --color-card-foreground: var(--card-foreground);
+  --color-primary: var(--primary); --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary); --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted); --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent); --color-accent-foreground: var(--accent-foreground);
+  --color-border: var(--border); --color-ring: var(--ring);
+  --color-alpine: var(--alpine);
+  --radius-lg: var(--radius); --radius-xl: calc(var(--radius) * 1.5);
+}
+
+:root {
+  color-scheme: dark;
+  --background: #08110c; --foreground: #f5faf6;
+  --card: #111d15; --card-foreground: #f5faf6;
+  --primary: #168a42; --primary-foreground: #ffffff;
+  --secondary: #0c1710; --secondary-foreground: #f5faf6;
+  --muted: #17251b; --muted-foreground: #9aac9f;
+  --accent: #78b936; --accent-foreground: #a7dc72;
+  --alpine: #145e31;
+  --border: #26382b; --ring: #78b936; --radius: 0.75rem;
+}
+
+@layer base {
+  * { @apply border-border outline-ring/50; }
+  html { scroll-behavior: smooth; }
+  body { @apply bg-background font-sans text-foreground antialiased; }
+  ::selection { @apply bg-primary text-primary-foreground; }
+  a, summary { @apply focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-ring; }
+}
+
+.hero-shade {
+  background:
+    linear-gradient(180deg, rgb(5 14 9 / 78%) 0%, rgb(5 14 9 / 55%) 40%, rgb(5 14 9 / 90%) 100%),
+    linear-gradient(90deg, rgb(5 14 9 / 62%) 0%, rgb(5 14 9 / 28%) 100%);
+}
+.no-scrollbar { scrollbar-width: none; }
+.no-scrollbar::-webkit-scrollbar { display: none; }
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .hero-video { display: none; }
+  *, *::before, *::after { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important; }
+}
