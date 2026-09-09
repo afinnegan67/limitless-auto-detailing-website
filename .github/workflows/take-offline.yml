@@ -1,0 +1,49 @@
+name: Take Limitless Website Offline
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  remove-vercel-project:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Delete Vercel project and all deployments
+        env:
+          VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
+          VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
+          VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}
+        run: |
+          python3 - <<'PY'
+          import json
+          import os
+          import urllib.error
+          import urllib.parse
+          import urllib.request
+
+          project = urllib.parse.quote(os.environ["VERCEL_PROJECT_ID"], safe="")
+          team = urllib.parse.quote(os.environ["VERCEL_ORG_ID"], safe="")
+          url = f"https://api.vercel.com/v9/projects/{project}?teamId={team}"
+          request = urllib.request.Request(
+              url,
+              method="DELETE",
+              headers={
+                  "Authorization": f"Bearer {os.environ['VERCEL_TOKEN']}",
+                  "Content-Type": "application/json",
+              },
+          )
+          try:
+              with urllib.request.urlopen(request, timeout=60) as response:
+                  body = response.read().decode("utf-8")
+                  if response.status not in (200, 204):
+                      raise SystemExit(f"Unexpected Vercel status: {response.status}")
+                  print(f"Vercel project deletion accepted (HTTP {response.status}).")
+                  if body:
+                      result = json.loads(body)
+                      print("Deleted project:", result.get("name") or result.get("id") or "confirmed")
+          except urllib.error.HTTPError as exc:
+              detail = exc.read().decode("utf-8", errors="replace")[:500]
+              raise SystemExit(f"Vercel deletion failed (HTTP {exc.code}): {detail}")
+          PY
