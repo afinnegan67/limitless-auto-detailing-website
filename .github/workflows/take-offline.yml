@@ -24,8 +24,7 @@ jobs:
           import urllib.request
 
           project = urllib.parse.quote(os.environ["VERCEL_PROJECT_ID"], safe="")
-          team = urllib.parse.quote(os.environ["VERCEL_ORG_ID"], safe="")
-          url = f"https://api.vercel.com/v9/projects/{project}?teamId={team}"
+          url = f"https://api.vercel.com/v9/projects/{project}"
           request = urllib.request.Request(
               url,
               method="DELETE",
